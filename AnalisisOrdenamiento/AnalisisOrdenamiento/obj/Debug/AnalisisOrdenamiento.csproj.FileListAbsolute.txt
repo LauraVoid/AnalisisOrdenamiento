@@ -5,3 +5,10 @@ C:\Users\Douglas\Desktop\ProyectoLunes\AnalisisOrdenamiento\AnalisisOrdenamiento
 C:\Users\Douglas\Desktop\ProyectoLunes\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.csproj.CoreCompileInputs.cache
 C:\Users\Douglas\Desktop\ProyectoLunes\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.exe
 C:\Users\Douglas\Desktop\ProyectoLunes\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.pdb
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\bin\Debug\AnalisisOrdenamiento.exe.config
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\bin\Debug\AnalisisOrdenamiento.exe
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\bin\Debug\AnalisisOrdenamiento.pdb
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.csprojAssemblyReference.cache
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.csproj.CoreCompileInputs.cache
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.exe
+C:\Users\Laura\git\AnalisisOrdenamiento\AnalisisOrdenamiento\AnalisisOrdenamiento\obj\Debug\AnalisisOrdenamiento.pdb
