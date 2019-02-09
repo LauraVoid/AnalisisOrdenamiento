@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace AnalisisOrdenamiento
 {
-    class Program
+    public class Ordenamiento
     {
+
+        public Ordenamiento()
+        {
+
+        }
+        public int suma(int a, int b)
+        {
+            return a + b;
+        }
+
         static void Main(string[] args)
         {
         }
