@@ -10,19 +10,46 @@ namespace AnalisisOrdenamiento
     public class Ordenamiento
     {
 
+
+        public int RAM { get; set; }
+        public const int RAM4=4;
+        public const int RAM8 = 4;
+        public const int RAM12 = 4;
+        public int tamañoArreglo { get; set; }
+        public const int GRANDE = 1000000;
+        public const int MEDIANO = 10000;
+        public const int PEQUEÑO = 100;
+        public int cantProcesos { get; set; }
+        public const int MUCHOS = 3;
+        public const int POCOS = 6;
+        public const int MASO = 9;
+        public string estadoArreglo { get; set; }
+        public const string ALEATORIO = "ALEATORIO";
+        public const string ASCENDENTE = "ASCENDENTE";
+        public const string DESCENDENTE = "DESCENDENTE";
+        public string algoritmoOrdenamiento { get; set; }
+        public const string QUICK = "QuickSort";
+        public const string BUBBLE = "BubbleSort";
         private int[] collection;
         private Stopwatch sw; // Creación del Stopwatch (Para medir tiempo)
 
         private TimeSpan start;
         private TimeSpan stop;
 
-
-        public Ordenamiento(int tam)
+        public Ordenamiento(int rAM, int tamañoArreglo, int cantProcesos, string estadoArreglo, 
+            string algoritmoOrdenamiento)
         {
-            collection = new int[tam];
+            RAM = rAM;
+            this.tamañoArreglo = tamañoArreglo;
+            this.cantProcesos = cantProcesos;
+            this.estadoArreglo = estadoArreglo;
+            this.algoritmoOrdenamiento = algoritmoOrdenamiento;
+          
+            collection = new int[tamañoArreglo];
             sw = new Stopwatch();
-
         }
+
+       
         public int[] getCollection()
         {
             return collection;
@@ -42,7 +69,72 @@ namespace AnalisisOrdenamiento
             collection = Enumerable.Range(0, collection.Length).Select(n => n = r.Next(10000, 1000000)).ToArray();
 
         }
+        public void ascendenteFillSmall()
+        {
+            int n = 10;
+            collection = Enumerable.Range(n, collection.Length).Select(i =>n=n+1).ToArray();
 
+        }
+        public void ascendenteFillBig()
+        {
+            int n = 10000;
+            collection = Enumerable.Range(n, collection.Length).Select(i =>n= n + 1).ToArray();
+
+        }
+
+        public void descendenteFillBig()
+        {
+            int n = 10000;
+            collection = Enumerable.Range(n, collection.Length).Select(i =>n= n - 1).ToArray();
+
+        }
+
+        public void descendenteFillSmall()
+        {
+            int n = 10;
+            collection = Enumerable.Range(n, collection.Length).Select(i =>n= n - 1).ToArray();
+
+        }
+
+        public void estadoQuickGrande()
+        {
+            if(estadoArreglo.Equals(ALEATORIO))
+            {
+                RandomFillBig();
+        
+            }
+            else if (estadoArreglo.Equals(ASCENDENTE))
+            {
+                descendenteFillBig();
+                
+            }
+            else
+            {
+                ascendenteFillBig();
+                
+            }
+        }
+
+        public void estadoQuickPequeño()
+        {
+            if (estadoArreglo.Equals(ALEATORIO))
+            {
+                RandomFillSmall();
+                
+            }
+            else if (estadoArreglo.Equals(ASCENDENTE))
+            {
+                descendenteFillSmall();
+               
+            }
+            else
+            {
+                ascendenteFillSmall();
+                QuickSort(collection, 0, collection.Length - 1);
+            }
+        }
+
+       
         public void QuickSort(int [] col,int left, int right)
         {
             if (left < right)
@@ -135,21 +227,21 @@ namespace AnalisisOrdenamiento
 
         static void Main(string[] args)
         {
-            Ordenamiento o = new Ordenamiento(100000);
-            o.RandomFillBig();
+            Ordenamiento o = new Ordenamiento(4,10,2,"","");
+            o.descendenteFillSmall();
             int[] arr = o.getCollection();
-            Console.WriteLine("ARREGLO ORIGINAL");
-            //foreach(var s in arr)
-            //{
-            //    Console.WriteLine(s);
-            //}
-            Console.WriteLine("ARREGLO ORDENADO ");
+            //  Console.WriteLine("ARREGLO ORIGINAL");
+            foreach (var s in arr)
+            {
+                Console.WriteLine(s);
+            }
+            // Console.WriteLine("ARREGLO ORDENADO ");
             // o.QuickSort(arr, 0, arr.Length - 1);
 
-            o.checkTimeStart();
-            int [] x=o.Burbuja();
-            o.checkTimeEnd();
-            Console.WriteLine("Time que se demora: {0}", o.checkTimeEnd());
+            //o.checkTimeStart();
+            //int [] x=o.Burbuja();
+            //o.checkTimeEnd();
+            //Console.WriteLine("Time que se demora: {0}", o.checkTimeEnd());
             //foreach (var t in x)
             //{
             //    Console.WriteLine(t);
