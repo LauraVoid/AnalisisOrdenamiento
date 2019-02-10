@@ -16,7 +16,7 @@ namespace AnalisisOrdenamiento
         public const int RAM8 = 4;
         public const int RAM12 = 4;
         public int tamañoArreglo { get; set; }
-        public const int GRANDE = 1000000;
+        public const int GRANDE = 100000000;
         public const int MEDIANO = 10000;
         public const int PEQUEÑO = 100;
 
@@ -101,7 +101,7 @@ namespace AnalisisOrdenamiento
             }
             else if (estadoArreglo.Equals(ASCENDENTE))
             {
-                descendenteFillBig();
+                ascendenteFillBig();
                 
             }
             else
@@ -120,7 +120,7 @@ namespace AnalisisOrdenamiento
             }
             else if (estadoArreglo.Equals(ASCENDENTE))
             {
-                descendenteFillSmall();
+                ascendenteFillSmall();
                
             }
             else
