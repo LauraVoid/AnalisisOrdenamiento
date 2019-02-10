@@ -229,18 +229,23 @@ namespace AnalisisOrdenamiento
 
         static void Main(string[] args)
         {
-            Ordenamiento ABC = new Ordenamiento(4, Ordenamiento.PEQUEÑO, "ALEATORIO", "BubbleSort");
-            ABC.estadoQuickGrande();
-            ABC.ordenarPorBurbuja();
+
+            Ordenamiento ABC = new Ordenamiento(12, Ordenamiento.GRANDE, "ASCENDENTE", "QuickSort");
+
+            ABC.checkTimeStart();
+            ABC.ascendenteFillSmall();
+            Console.WriteLine(ABC.checkTimeEnd());
+           // ABC.estadoQuickGrande();
+           // ABC.ordenarPorBurbuja();
 
 
 
             // Array.Sort(ABC.getCollection());
 
-            foreach (int a in ABC.getCollection())
-            {
-                Console.WriteLine(a);
-            }
+            //foreach (int a in ABC.getCollection())
+            
+              //  Console.WriteLine(a);
+            
         }
     }
 }
