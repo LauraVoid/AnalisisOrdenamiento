@@ -106,7 +106,7 @@ namespace AnalisisOrdenamiento
             }
             else
             {
-                ascendenteFillBig();
+                descendenteFillBig();
                 
             }
         }
@@ -125,7 +125,7 @@ namespace AnalisisOrdenamiento
             }
             else
             {
-                ascendenteFillSmall();
+                descendenteFillSmall();
             
             }
         }
