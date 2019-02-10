@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnalisisOrdenamientoTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ExperimentoTest
     {
         [TestMethod]
         public void TestMethod1()
