@@ -19,10 +19,7 @@ namespace AnalisisOrdenamiento
         public const int GRANDE = 1000000;
         public const int MEDIANO = 10000;
         public const int PEQUEÑO = 100;
-        public int cantProcesos { get; set; }
-        public const int MUCHOS = 3;
-        public const int POCOS = 6;
-        public const int MASO = 9;
+
         public string estadoArreglo { get; set; }
         public const string ALEATORIO = "ALEATORIO";
         public const string ASCENDENTE = "ASCENDENTE";
@@ -36,12 +33,11 @@ namespace AnalisisOrdenamiento
         private TimeSpan start;
         private TimeSpan stop;
 
-        public Ordenamiento(int rAM, int tamañoArreglo, int cantProcesos, string estadoArreglo, 
+        public Ordenamiento(int rAM, int tamañoArreglo, string estadoArreglo, 
             string algoritmoOrdenamiento)
         {
             RAM = rAM;
             this.tamañoArreglo = tamañoArreglo;
-            this.cantProcesos = cantProcesos;
             this.estadoArreglo = estadoArreglo;
             this.algoritmoOrdenamiento = algoritmoOrdenamiento;
           
@@ -130,7 +126,7 @@ namespace AnalisisOrdenamiento
             else
             {
                 ascendenteFillSmall();
-                QuickSort(collection, 0, collection.Length - 1);
+            
             }
         }
 
@@ -180,24 +176,34 @@ namespace AnalisisOrdenamiento
             }
         }
 
-        public int[] Burbuja()
+        public void Burbuja()
         {
-            int[] arr = (int[])collection.Clone();
+           
             int t;
-            for(int i = 1; i < arr.Length; i++)
+            for(int i = 1; i < collection.Length; i++)
             {
-                for(int j = arr.Length - 1; j >= i;j--)
+                for(int j = collection.Length - 1; j >= i;j--)
                 {
-                    if(arr[j-1]> arr[j])
+                    if(collection[j-1]> collection[j])
                     {
-                        t = arr[j - 1];
-                        arr[j - 1] = arr[j];
-                        arr[j] = t;
+                        t = collection[j - 1];
+                        collection[j - 1] = collection[j];
+                        collection[j] = t;
 
                     }
                 }
             }
-            return arr;
+   
+        }
+
+        public void ordenarPorQuick()
+        {
+            QuickSort(collection, 0, collection.Length);
+        }
+
+        public void ordenarPorBurbuja()
+        {
+            Burbuja();
         }
         // Iniciar la medición.
         public void checkTimeStart()
@@ -219,33 +225,22 @@ namespace AnalisisOrdenamiento
             return stop.Subtract(start).TotalMilliseconds;
         }
         
-
-        public int suma(int a, int b)
-        {
-            return a + b;
-        }
+       
 
         static void Main(string[] args)
         {
-            Ordenamiento o = new Ordenamiento(4,10,2,"","");
-            o.descendenteFillSmall();
-            int[] arr = o.getCollection();
-            //  Console.WriteLine("ARREGLO ORIGINAL");
-            foreach (var s in arr)
-            {
-                Console.WriteLine(s);
-            }
-            // Console.WriteLine("ARREGLO ORDENADO ");
-            // o.QuickSort(arr, 0, arr.Length - 1);
+            Ordenamiento ABC = new Ordenamiento(4, Ordenamiento.PEQUEÑO, "ALEATORIO", "BubbleSort");
+            ABC.estadoQuickGrande();
+            ABC.ordenarPorBurbuja();
 
-            //o.checkTimeStart();
-            //int [] x=o.Burbuja();
-            //o.checkTimeEnd();
-            //Console.WriteLine("Time que se demora: {0}", o.checkTimeEnd());
-            //foreach (var t in x)
-            //{
-            //    Console.WriteLine(t);
-            //}
+
+
+            // Array.Sort(ABC.getCollection());
+
+            foreach (int a in ABC.getCollection())
+            {
+                Console.WriteLine(a);
+            }
         }
     }
 }
