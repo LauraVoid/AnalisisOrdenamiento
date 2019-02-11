@@ -14,7 +14,7 @@ namespace AnalisisOrdenamiento
         public Experimento()
         {
            
-           ordenamiento = new Ordenamiento(8, 100, "aleatorio", "burbuja");
+           
            
 
 
